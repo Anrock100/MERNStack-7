@@ -1,0 +1,303 @@
+<!-- 
+getElementById() 
+<p id="p1"></p>
+<script>
+    let obj1 = document.getElementById("p1");
+    obj1.innerText = "Hello World!";
+    console.log(obj1.innerText);
+    console.log(obj1.innerText);
+</script> 
+-->
+
+<!-- 
+getElementByClassName()
+<p class="intro">The DOM is very useful.</p>
+<p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+<p id="demo"></p>
+<script>
+    var elements = document.getElementsByClassName("intro");
+    for(let i=0; i<elements.length; i++){
+        console.log(elements[i].innerHTML);
+    }
+</script> 
+-->
+
+<!-- getElementsByTagName
+    <p>Hello</p>
+    <p>Hi</p>
+    <p>How are you?</p>
+    <p id="p4">NA</p>
+    <script>
+        var elements = document.getElementsByTagName("p");
+        for(let i=0; i<elements.length; i++){
+            console.log(elements[i].innerHTML);
+        }
+        document.getElementById("p4").innerHTML="Welcome to broadway";
+    </script>
+-->
+
+<!-- querySelector-1
+    <div id="div1">
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+    </div>
+    <button onclick="f1()">Click to me</button>
+    <script>
+        function f1() {
+            var element = document.getElementById("div1");
+            element.querySelector("p").innerHTML = "Hello!";
+        }
+    </script>
+-->
+
+<!-- querySelector-2
+    <div id="div1">
+        <h2 class="c1">Heading-1</h2>
+            <p class="c1">Paragraph-1</p>
+            <p class="c1">Paragraph-2</p>        
+        <h2 class="c1">Heading-2</h2>
+            <p class="c1">Paragraph-1</p>
+            <p class="c1">Paragraph-2</p>
+    </div>
+
+    <button onclick="f1()">Try it</button>
+    <script>
+        function f1() {
+            var x = document.getElementById("div1");
+            x.querySelector("p.c1").innerHTML = "Hello World!";
+        }
+    </script> 
+-->
+
+<!-- querySelector-2
+    <div id="div1">
+        <p id="p1">Paragraph-1</p>
+    </div>
+    <button onclick="f1()">Click Me</button>
+    <script>
+        function f1() {
+        var x = document.getElementById("div1");
+        x.querySelector("#p1").innerHTML = "Broadway InfoSys Nepal";
+        }
+    </script>
+-->
+
+<!-- 
+    querySelector-3
+    <div id="div1">
+        <p><a href="https://www.facebook.com">facebook.com</a></p>
+        <p><a href="http://www.disney.com" target="_blank">disney.com</a></p>
+        <p><a href="http://www.wikipedia.org" target="_top">wikipedia.org</a></p>
+    </div>
+    <button onclick="f1()">Click Me</button>
+    <script>
+        function myFunction() {
+        var elements = document.getElementById("div1");
+        elements.querySelector("a[target]").style.border = "10px solid red";
+        }
+    </script> 
+-->
+
+<!-- querySelectorAll -1
+<style>
+    #div1 {
+      border: 1px solid black;
+      margin: 5px;
+    }
+</style>
+
+<div id="div1">
+    <h2 class="c1">Heading-2</h2>
+    <p class="c1">Paragraph-1</p>
+    <p class="c1">Paragraph-2</p>
+</div>
+<button onclick="f1()">Click Me</button>
+<script>
+    function f1() {
+        var elements = document.getElementById("div1").querySelectorAll("p.c1");
+        elements[0].style.backgroundColor = "red";
+    }
+</script>
+-->
+
+<!-- 
+    <style>
+        #div1 {
+        border: 1px solid black;
+        margin: 5px;
+        }
+    </style>
+    <div id="div1">
+        <h2 class="c1">Heading-2</h2>
+        <p class="c1">Paragraph-1</p>
+        <p class="c1">Paragraph-2</p>
+    </div>
+    <button onclick="f1()">Click Me</button>
+    <p id="c2"></p>
+    <script>
+        function f1() {
+        var elements = document.getElementById("div1").querySelectorAll(".c1");
+        document.getElementById("c2").innerHTML = elements.length;
+        }
+    </script> 
+-->
+<!--
+    <style>
+        #div1 {
+        border: 1px solid black;
+        margin: 5px;
+        }
+    </style>
+
+    <div id="div1">
+        <h2 class="c1">Heading-2</h2>
+        <p class="c1">Paragraph-1</p>
+        <p class="c1">Paragraph-2</p>
+        <p>Paragraph<span class="c1">-3</span>.</p>
+    </div>
+    <button onclick="f1()">Click Me</button>
+    <script>
+        function f1() {
+            var elements = document.getElementById("div1").querySelectorAll(".c1");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.backgroundColor = "red";
+            }
+        }
+    </script>
+-->
+
+<!-- EventListener-1 -->
+<!-- 
+    <button id="btn1">Click Me</button>
+    <p id="c1"></p>
+    <script>
+        document.getElementById("btn1").addEventListener("click", myFunction);
+        function myFunction() {
+            document.getElementById("c1").innerHTML = "Hello World";
+        }
+    </script> 
+-->
+
+<!-- EventListener-2 -->
+<!--     
+    <button id="btn1">Click Me</button>
+    <p id="c1"></p>
+    <script>
+        document.getElementById("btn1").addEventListener("click", function() {
+        document.getElementById("c1").innerHTML = "Hello World";
+        });
+    </script> 
+-->
+
+<!-- EventListener-3 -->
+<!-- 
+    <button id="btn1">Click Me</button>
+    <script>  
+        var element = document.getElementById("btn1");
+        element.addEventListener("click", f1);
+        element.addEventListener("click", f2);
+
+    function f1() {
+        alert("Hello from f1");
+    }
+
+    function f2() {
+        alert("Hello from f2");
+    }
+    </script> 
+-->
+
+
+<!-- EventListener-4 -->
+<!--
+<button id="btn1">Click Me</button>
+<p id="c1"></p>
+<script>
+    var obj1 = document.getElementById("btn1");
+    obj1.addEventListener("mouseover", f1);
+    obj1.addEventListener("click", f2);
+    obj1.addEventListener("mouseout", f2);
+
+    function f1() {
+      document.getElementById("c1").innerHTML += "Moused over!<br>"
+    }
+
+    function f2() {
+      document.getElementById("c1").innerHTML += "Mouse Clicked!<br>"
+    }
+
+    function f3() {
+      document.getElementById("c1").innerHTML += "Moused out!<br>"
+    }
+  </script>
+-->
+
+<!-- EventListener-5 -->
+<!-- <button id="btn1">Click Me</button>
+<p id="c1"></p>
+<script>
+  var value1 = 5;
+  var value2 = 7;
+  document.getElementById("btn1").addEventListener("click", function() {
+    f1(value1, value2);
+  });
+
+  function f1(num1, num2) {
+    var result = num1 + num2;
+    document.getElementById("c1").innerHTML = result;
+  }
+</script> -->
+
+<!-- EventListener-6 -->
+<!-- <button id="btn1">Click Me</button>
+<script>
+  document.getElementById("btn1").addEventListener("click", function() {
+    if(this.style.backgroundColor == "red"){
+        this.style.backgroundColor = "gray";
+    }
+    else{
+        this.style.backgroundColor = "red";
+    }
+    
+  });
+</script> -->
+
+<!-- EventListener-7 -->
+<!-- 
+    <div id="div1">
+        <button onclick="removeHandler()" id="btn1">Click Me</button>
+        <p id="p1"></p>
+    </div>
+    <script>
+        document.getElementById("div1").addEventListener("mousemove", myFunction);
+        function myFunction() {
+        document.getElementById("p1").innerHTML = Math.random();
+        }
+        function removeHandler() {
+        document.getElementById("div1").removeEventListener("mousemove", myFunction);
+        }
+    </script> 
+-->
+
+<!-- Creating Cookie -7 -->
+
+<script>
+    document.cookie = "username=admin;max-age=60*60";
+    console.log("Hello");
+</script>
+
+<button onclick="f1()">Create Cookie</button>
+<button onclick="f2()">Display Cookies</button>
+
+<p id="p1"></p>
+<script>
+    function f1() {
+        document.cookie = "user=admin; password=admin; expires=June 6, 2022 2:10:00 PM";
+    }
+
+    function f2() {
+        var ck1 = document.cookie;
+        document.getElementById("p1").innerHTML = "Cookie : " + ck1;
+    }
+
+</script>
