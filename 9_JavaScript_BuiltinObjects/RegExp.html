@@ -1,0 +1,73 @@
+<script>
+    //Crating Regular Expression
+    const regularExp = /abc/;
+    const reguarExp = new RegExp('abc');
+    
+    var regex = new RegExp(/^a...s$/);
+    console.log(regex.test('alias'));
+    
+    var regex = new RegExp(/Kathmandu/); //Exact
+    console.log(regex.test('Kathmandu'));
+
+    // []
+    var regex = new RegExp(/[a]/); //Any one of the set
+    console.log(regex.test('Kathmandu'));
+    var regex = new RegExp(/[z]/); //Any one of the set
+    console.log(regex.test('Kathmandu'));
+
+
+    // [a-e] or [abcde].
+    var regex = new RegExp(/[a-e]/); //Any one of the set
+    console.log(regex.test('Kathmandu'));
+
+    // [1-4] or [1234].
+    var regex = new RegExp(/[1-4]/); //Any one of the set
+    console.log(regex.test('123456789'));
+
+    var regex = new RegExp(/[1-4]/); //Any one of the set
+    console.log(regex.test('56789'));
+
+    // [^abc] Any character except a or b or c.
+    // [^0-9] Any non-digit character.
+    var regex = new RegExp(/[^x-z]/);
+    console.log(regex.test('zyzathmandu'));    
+
+    var regex = new RegExp(/[^0-9]/);
+    console.log(regex.test('Kathmandu, Nepal'));    
+
+
+    // . A period matches any single character (except newline '\n').
+    var regex = new RegExp(/../);
+    console.log(regex.test('a'));
+
+    var regex = new RegExp(/../);
+    console.log(regex.test('abc'));
+
+    // ^ To check if a string starts with a certain character.
+    var regex = new RegExp(/^a/);
+    console.log(regex.test('z'));
+
+    var regex = new RegExp(/^ab/);
+    console.log(regex.test('az'));
+
+    // $ To check if a string ends with a certain character.
+    var regex = new RegExp(/a$/);
+    console.log(regex.test('xyza'));
+
+    var regex = new RegExp(/z$/);
+    console.log(regex.test('xyza'));
+
+
+    var regex = new RegExp(/^a.z$/);
+    console.log(regex.test('axz'));
+
+    // * Matches zero or more occurrences of the pattern left to it.
+    var regex = new RegExp(/m*n/);
+    console.log(regex.test('bovdaz'));
+
+    // + matches one or more occurrences of the pattern left to it.
+    var regex = new RegExp(/ma+n/);
+    console.log(regex.test('mn'));
+
+
+</script>
