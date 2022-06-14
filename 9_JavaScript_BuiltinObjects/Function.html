@@ -1,0 +1,12 @@
+<script>
+     //Function
+    function f1() {
+        const num1 = 50;
+        return new Function('return num1;');
+    }    
+</script>
+
+<script>
+    const f01 = f1();
+    console.log(f01());
+</script>

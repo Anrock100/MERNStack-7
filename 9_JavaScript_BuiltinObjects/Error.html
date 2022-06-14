@@ -1,0 +1,189 @@
+<script>
+/*
+Error
+    AggregateError
+    EvalError
+    InternalError Non-Standard
+    RangeError
+    ReferenceError
+    SyntaxError
+    TypeError
+    URIError
+*/
+
+// Properties
+    // Error.prototype.cause
+    // Error.prototype.message
+    // Error.prototype.name
+
+    // Non-Standard
+    // Error.prototype.columnNumber
+    // Error.prototype.fileName
+    // Error.prototype.lineNumber
+    // Error.prototype.stack
+
+//Common errors
+
+//Range Error
+/*
+    try{
+        var num1 = 5;
+        num1.toExponential(-2);
+    }
+    catch(ex){
+        console.log(ex); //RangeError: toExponential() argument must be between 0 and 100        
+        if(ex instanceof RangeError){
+            console.log("Range error");
+        }
+    }
+*/
+
+//TypeError - 1
+/*
+try{
+        var num1;
+        num1.f1();
+}
+catch(ex){
+    console.log(ex); //TypeError: Cannot read properties of undefined (reading 'f1')
+    if(ex instanceof TypeError){
+        console.log("Type Error");
+    }
+}
+*/
+
+//TypeError - 2
+/*
+try{
+        var num1=null;
+        num1.f1();
+}
+catch(ex){
+    console.log(ex); //TypeError: Cannot read properties of null (reading 'f1')
+    if(ex instanceof TypeError){
+        console.log("Type Error");
+    }
+}
+*/
+
+//TypeError - 3
+/*
+try{
+    var num1=undefined;
+    num1.length;
+}
+catch(ex){
+    console.log(ex); //TypeError: Cannot read properties of undefined (reading 'length')
+    if(ex instanceof TypeError){
+        console.log("Type Error");
+    }
+}
+*/
+
+//TypeError - 5
+/*
+try{
+    const num1=5;
+    num1 = 10;
+}
+catch(ex){
+    console.log(ex); //TypeError: Assignment to constant variable.
+    if(ex instanceof TypeError){
+        console.log("Type Error");
+    }
+}
+*/
+
+//Multiple Errors
+/*
+try{
+    var num1 = 5;
+    num1.toExponential(-1);
+    // num1.toExponential(5);    
+    const num2=5;
+    num2 = 10;
+}
+catch(ex){
+    console.log(ex); //RangeError: toExponential() argument must be between 0 and 100        
+    if(ex instanceof RangeError){
+        console.log("Range Error");
+    }
+    if(ex instanceof TypeError){
+        console.log("Type Error");
+    }
+}
+*/
+
+class ValueRange extends Error{
+    constructor(message){
+        super(message);
+        this.name="ValueRange Error";
+        this.cause="Value either too low or high";
+    }
+}
+
+</script>
+
+<script>
+    let num1 = 1;
+    let num2 = 50;
+    
+    // let var1 = 123;
+    let var1 = "ABC"; 
+
+    try {        
+        // num1.toPrecision(500);           // RangeError: toPrecision() argument must be between 1 and 100
+        // num2 = num3 + 1;                 // ReferenceError: num3 is not defined
+        // eval("alert('Hello)");           // SyntaxError: Invalid or unexpected token
+        // num1.toUpperCase();              // TypeError: num1.toUpperCase is not a function
+        // decodeURI("%%%");                // URIError: URI malformed
+        // console.log(num2);
+        /*
+        if((num2>0) && (num2<=10)){         // ValueRange Error: Value Range Error
+            console.log(num2);
+        }
+        else{
+            throw new ValueRange("Value Range Error");
+        }
+        */
+
+        //var result = eval(var1);            // ReferenceError: ABC is not defined
+
+        
+
+    }
+    catch(err) {
+        console.log(err);
+        if(err instanceof RangeError){            
+            console.log(err.cause);
+            console.log(err.message);
+            console.log(err.name);
+        }
+        else if(err instanceof ReferenceError){
+            console.log(err.cause);
+            console.log(err.message);
+            console.log(err.name);
+        }
+        else if(err instanceof TypeError){
+            console.log(err.cause);
+            console.log(err.message);
+            console.log(err.name);
+        }
+        else if(err instanceof URIError){
+            console.log(err.cause);
+            console.log(err.message);
+            console.log(err.name);
+        }
+        else if(err instanceof ValueRange){
+            console.log(err.cause);
+            console.log(err.message);
+            console.log(err.name);
+        }
+        else if(err instanceof ReferenceError){
+            console.log(err.cause);
+            console.log(err.message);
+            console.log(err.name);
+        }
+        
+    }
+</script>

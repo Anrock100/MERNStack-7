@@ -1,0 +1,144 @@
+<script>
+    const person1 ={id:1, 'name':'Raj'}
+    const person2 ={id:2, 'name':'Kiran'}    
+    
+    // Object.assign()
+    // assign(target, ...sources)
+        const person3 ={} 
+        Object.assign(person3, person1);
+        console.log(person3, person1)
+        person3.id=2;
+        console.log(person3, person1)
+
+    // Object.create()
+    // create(proto, propertiesObject)
+        const person4 = Object.create(person1);
+        console.log(person1, person4);
+
+    // Object.defineProperties()
+        const person5={};
+        Object.defineProperties(person5, {
+            id: {
+                value: 0,
+                writable: true
+            },
+            name: {
+                value: null,
+                writable: true
+            },
+            address: {
+                value: 'KTM',
+                writable: false
+            }
+        });
+        person5.id=5;
+        person5.name="Raj Thapa";
+        person5.address="BHK";
+        console.log(person5);
+
+    // Object.defineProperty()
+    // defineProperty(obj, prop, descriptor)
+
+        Object.defineProperty(person5, 'phone', {
+            value: null,
+            writable: true
+        });
+        person5.phone="45678921457";
+        console.log(person5);        
+    
+    // Object.entries()
+    // entries(obj)
+        for (const [key, value] of Object.entries(person1)) {
+            console.log(`${key}: ${value}`);
+        }
+
+    // Object.freeze()
+        //freeze(obj)
+        Object.freeze(person1);
+        person1.id=3;
+
+
+    // Object.fromEntries() # MAP to Object
+        // fromEntries(iterable);
+        const entries = new Map([
+            ['id', 1],
+            ['name', 'Kiran'],
+            ['address', 'KTM']
+        ]);
+        const obj = Object.fromEntries(entries);
+        console.log(obj);
+
+    // Object.getOwnPropertyDescriptor()
+        const person6 = {
+            id: 1,
+            name:'Raj Rai',
+            address:'KTM'
+        };
+        const descriptor1 = Object.getOwnPropertyDescriptor(person6, 'id');
+        console.log(descriptor1.configurable);
+        console.log(descriptor1.value);
+
+    // Object.getOwnPropertyDescriptors()
+        const descriptors2 = Object.getOwnPropertyDescriptors(person6);
+        console.log(descriptors2.id.writable);
+        console.log(descriptors2.id.value);
+
+
+    // Object.getOwnPropertyNames()
+        console.log(Object.getOwnPropertyNames(person6));
+
+    // Object.getOwnPropertySymbols()
+    // Object.getPrototypeOf()
+    
+    // Object.prototype.hasOwnProperty()
+        console.log(person6.hasOwnProperty('id'));
+
+    // Object.is()
+        console.log(Object.is(2, 2));
+        console.log(Object.is(2, 2.0));
+
+    // Object.isExtensible()
+        console.log(Object.isExtensible(person6));
+
+    // Object.preventExtensions()
+        Object.preventExtensions(person6);
+        console.log(Object.isExtensible(person6));
+
+    // Object.isFrozen()
+    // Object.isSealed()
+        console.log(Object.isFrozen(person6));
+        console.log(Object.isFrozen(person1));
+        console.log(Object.isSealed(person1));
+
+    // Object.prototype.isPrototypeOf()
+        var f7 = function(){};
+        var obj7 = new f7();
+        console.log(f7.prototype.isPrototypeOf(obj7));
+    
+    // Object.keys()
+    // Object.values()
+        var obj8 = {
+            id:1,
+            name:'Raj'
+        }
+        console.log(Object.keys(obj8));
+        console.log(Object.values(obj8));
+
+    // Object.prototype.propertyIsEnumerable()
+        console.log(obj8.propertyIsEnumerable('id'));
+
+    // Object.seal()
+        Object.seal(obj8);
+        delete obj8.id;
+
+    // Object.setPrototypeOf()
+    // Object.prototype.toLocaleString()
+    // Non-StandardDeprecated
+    // Object.prototype.toSource()
+    
+    // Object.prototype.toString()
+    console.log(obj8.toString());
+
+    // Object.prototype.valueOf()
+    console.log(obj8.valueOf());    
+</script>

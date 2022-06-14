@@ -1,0 +1,21 @@
+<script>
+
+    //Creating Symbol
+    const s1 = Symbol('hello');
+    const s2 = Symbol('hello');
+    console.log(typeof s1);
+    console.log(typeof s2);
+    console.log(s1 === s2); // false
+    console.log(s1);
+    console.log(s2);
+    console.log(s1.description);
+
+    //Adding Symbol as Object Key
+    const id = Symbol('id');
+    let person = {
+        [id]:1,
+        name:'Raj'
+    }
+    console.log(person);
+
+</script>

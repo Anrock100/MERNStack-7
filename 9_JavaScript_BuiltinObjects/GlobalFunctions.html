@@ -1,0 +1,73 @@
+<script>
+//Built-in functions
+    // eval()
+    // isFinite()
+    // isNaN()
+    // parseFloat()
+    // parseInt()
+    // encodeURI()
+    // encodeURIComponent()
+    // decodeURI()
+    // decodeURIComponent()
+
+
+    // eval()
+        // var result = eval(new String('2 + 2')); // "2 + 2"
+        // console.log(result);
+
+        // result = eval('2 + 2');             // 4
+        // console.log(result);
+    
+    // isFinite()
+        // var var1 = 456789;
+        // result = isFinite(var1);
+        // console.log(result);
+
+    // isNaN()
+        // var var1 = 456789;
+        // result = isNaN(var1);
+        // console.log(result);
+
+    // parseFloat()
+        // var var1 = 123;
+        // var var1 = "Kathmandu";
+        // result = parseFloat(var1);
+        // console.log(result);
+        // console.log(typeof result);
+
+    // parseInt()
+        // var var1 = 123;
+        // var var1 = "Kathmandu";
+        // result = parseFloat(var1);
+        // console.log(result);
+        // console.log(typeof result);
+
+    // encodeURI()
+        const uri = 'https://mozilla.org/?x=шеллы';
+        const encoded = encodeURI(uri);
+        console.log(encoded);
+        // expected output: "https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B"
+        try {
+            console.log(decodeURI(encoded));
+            // expected output: "https://mozilla.org/?x=шеллы"
+        }
+        catch (e) { // catches a malformed URI
+            console.error(e);
+        }
+
+    // encodeURIComponent()
+        // encodes characters such as ?,=,/,&,:
+        console.log(`?x=${encodeURIComponent('test?')}`);
+        // expected output: "?x=test%3F"
+        console.log(`?x=${encodeURIComponent('шеллы')}`);
+        // expected output: "?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B"
+
+    // decodeURIComponent()
+        function containsEncodedComponents(x) {
+            // ie ?,=,&,/ etc
+            return (decodeURI(x) !== decodeURIComponent(x));
+        }
+        console.log(containsEncodedComponents('%3Fx%3Dtest')); // ?x=test
+        console.log(containsEncodedComponents('%D1%88%D0%B5%D0%BB%D0%BB%D1%8B')); // шеллы
+
+</script>

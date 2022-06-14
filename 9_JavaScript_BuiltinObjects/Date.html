@@ -1,0 +1,96 @@
+<script>
+    //Date Object
+    //Constructor
+        // Date()
+    
+    //Methods
+        //Static Methods
+            // Date.now()
+            dt = new Date();
+            // console.log(dt); //Wed Jun 01 2022 10:44:02 GMT+0545 (Nepal Time)
+
+            // Date.parse()
+            // var str1 = String("Wed Jun 01 2022 10:44:02 GMT+0545");
+            // var dt2 = Date.parse(str1);
+            // console.log(typeof dt2);
+            // console.log(dt2);
+            
+            var dt2 = Date.parse("2022-05-31"); //YYYY-MM-DD 
+            // var dt2 = Date.parse("2022/05/31"); //YYYY/MM/DD
+            //var dt2 = Date.parse("31-05-2022"); //Invalid Date
+            // var dt2 = Date.parse("31 05 2022"); //Invalid Date            
+            // var dt2 = Date.parse("31 05 2022"); //Invalid Date
+
+            console.log(typeof dt2);
+            console.log(dt2);
+            console.log(new Date(dt2));
+            
+            //Date Difference
+            var date1 = new Date("04/30/2019");
+            var date2 = new Date("05/30/2019");
+            var diff_time = date2.getTime() - date1.getTime();
+            var diff_days = diff_time / (1000 * 3600 * 24);
+            console.log(`Difference Days : ${diff_days}`) ;
+
+            // var dt3 = new Date(dt2);
+            // console.log(dt3.getTime())
+            // console.log(dt3)
+
+            // Date.UTC()
+            // const utcdt1 = new Date(Date.UTC(96, 1, 2, 3, 4, 5));
+            // const utcdt2 = new Date(Date.UTC(0, 0, 0, 0, 0, 0));
+            // console.log(utcdt1);
+            // console.log(utcdt2);
+
+
+        //Instance Methods
+            // Date.prototype[@@toPrimitive]
+            // Date.prototype.getDate()
+            // Date.prototype.getDay()
+            // Date.prototype.getFullYear()
+            // Date.prototype.getHours()
+            // Date.prototype.getMilliseconds()
+            // Date.prototype.getMinutes()
+            // Date.prototype.getMonth()
+            // Date.prototype.getSeconds()
+            // Date.prototype.getTime()
+            // Date.prototype.getTimezoneOffset()
+            // Date.prototype.getUTCDate()
+            // Date.prototype.getUTCDay()
+            // Date.prototype.getUTCFullYear()
+            // Date.prototype.getUTCHours()
+            // Date.prototype.getUTCMilliseconds()
+            // Date.prototype.getUTCMinutes()
+            // Date.prototype.getUTCMonth()
+            // Date.prototype.getUTCSeconds()           
+
+            // Date.prototype.setDate()
+            // Date.prototype.setFullYear()
+            // Date.prototype.setHours()
+            // Date.prototype.setMilliseconds()
+            // Date.prototype.setMinutes()
+            // Date.prototype.setMonth()
+            // Date.prototype.setSeconds()
+            // Date.prototype.setTime()
+            // Date.prototype.setUTCDate()
+            // Date.prototype.setUTCFullYear()
+            // Date.prototype.setUTCHours()
+            // Date.prototype.setUTCMilliseconds()
+            // Date.prototype.setUTCMinutes()
+            // Date.prototype.setUTCMonth()
+            // Date.prototype.setUTCSeconds()
+            // Date.prototype.toDateString()
+            // Date.prototype.toISOString()
+            // Date.prototype.toJSON()
+            // Date.prototype.toLocaleDateString()
+            // Date.prototype.toLocaleString()
+            // Date.prototype.toLocaleTimeString()
+            
+        // Non-Standard Methods
+            // Date.prototype.toSource()
+            // Date.prototype.toString()
+            // Date.prototype.toTimeString()
+            // Date.prototype.toUTCString()
+            // Date.prototype.valueOf()
+
+</script>

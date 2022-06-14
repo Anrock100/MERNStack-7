@@ -1,0 +1,59 @@
+<script>
+// Number
+    // Constructor
+        // Number()
+    
+    // Properties
+        // Number.EPSILON
+        // Number.MAX_SAFE_INTEGER
+        // Number.MAX_VALUE
+            // console.log(Number.MAX_VALUE);
+
+        // Number.MIN_SAFE_INTEGER
+        // Number.MIN_VALUE
+            // console.log(Number.MIN_VALUE);
+        
+        // Number.NaN
+            // console.log(Number.NaN);
+
+        // Number.NEGATIVE_INFINITY        
+        // Number.POSITIVE_INFINITY
+    
+    // Methods
+        // Number.isFinite()
+            console.log(Number.isFinite(1234567890));
+        
+        // Number.isInteger()
+            console.log(Number.isInteger(1234567890));
+
+        // Number.isNaN()
+            console.log(Number.isNaN(1234567890));
+            console.log(Number.isNaN("ABC"));
+
+        // Number.isSafeInteger()
+        // Number.parseFloat()
+            console.log(Number.parseFloat("123.456"));
+
+        // Number.parseInt()
+            console.log(Number.parseInt("123"));
+
+        // Number.prototype.toExponential()
+            console.log(Number(2).toExponential(3));
+        
+        // Number.prototype.toFixed()
+            console.log(Number(2.212415).toFixed(2));
+
+        // Number.prototype.toLocaleString()
+        // Number.prototype.toPrecision()
+            console.log(Number(2.212415).toPrecision(2));
+
+        // Number.prototype.toString()
+            console.log(Number("2.212415").toString());
+
+        // Number.prototype.valueOf()
+            const obj1 = new Number(42);
+            console.log(typeof obj1);            
+            const num = obj1.valueOf();
+            console.log(num);
+            console.log(typeof num);            
+</script>
