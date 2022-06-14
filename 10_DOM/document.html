@@ -1,16 +1,25 @@
-<!-- 
-getElementById() 
+ 
+<!-- getElementById()  -->
+<!--
+<input type="text" id="strName">;
+<button onclick="process()">Click Me</button>
 <p id="p1"></p>
 <script>
-    let obj1 = document.getElementById("p1");
-    obj1.innerText = "Hello World!";
-    console.log(obj1.innerText);
-    console.log(obj1.innerText);
-</script> 
--->
+    function process(){
+        //txt1.value;
+        //document.getElementById("p1").innerHTML=strName.value;
+        let obj1 = document.getElementById("p1");
+        obj1.innerHTML=strName.value;
+    }
+    // let obj1 = document.getElementById("p1");
+    // //obj1.innerText = "Hello World!";
+    // //obj1.innerHTML = "Hello world";
+    // obj1.innerContent="Hello world"
+    // console.log(obj1.innerText);
+</script>  -->
 
-<!-- 
-getElementByClassName()
+
+<!-- getElementsByClassName() -->
 <p class="intro">The DOM is very useful.</p>
 <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
 <p id="demo"></p>
@@ -20,7 +29,6 @@ getElementByClassName()
         console.log(elements[i].innerHTML);
     }
 </script> 
--->
 
 <!-- getElementsByTagName
     <p>Hello</p>
