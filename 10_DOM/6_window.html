@@ -1,0 +1,832 @@
+<!-- alert() -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        alert("Hello! I am an alert box!");
+    }
+</script> 
+-->
+
+<!-- btoa() and atob() -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>    
+<p id="demo"></p>
+<script>      
+    function myFunction() {
+        var str = "Hello World!";
+        var enc = window.btoa(str);
+        var dec = window.atob(enc);
+        var res = "Original String: " + str + "<br>";
+        res = res + "Encoded String: " + enc + "<br>";
+        res = res + "Decoded String: " + dec;
+        document.getElementById("demo").innerHTML = res;
+    }
+</script> 
+-->
+
+<!-- 
+    Window.open()
+    open()
+    open(url)
+    open(url, target)
+    open(url, target, windowFeatures)
+-->
+
+<!-- open() & close() -->
+<!-- Example-1 -->
+<!-- 
+<button onclick="openWindow()">Open</button>
+<button onclick="closeWindow()">Close</button>
+<script>
+    var myWindow;
+    function openWindow() {
+        myWindow = window.open("https://www.facebook.com", "_blank", "width=500, height=500");
+    }
+    function closeWindow() {
+        myWindow.close();
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- <script>
+    var myWindow;
+    function openWin() {
+        myWindow = window.open("", "myWindow", "width=400, height=200");
+    }
+    function closeWin() {
+        if (myWindow) {
+            myWindow.close();
+        }
+    }
+    
+    function checkWin() {
+        if (!myWindow) {
+            document.getElementById("demo").innerHTML = "Window has never been opened!";
+        } else {
+            if (myWindow.closed) {
+                document.getElementById("demo").innerHTML = "Window has been closed!";
+            } else {
+                document.getElementById("demo").innerHTML = "Window has not been closed!";
+            }
+        }
+    }
+
+</script>
+
+<body>
+    <button onclick="openWin()">Open</button>
+    <button onclick="closeWin()">Close</button>
+    <br><br>
+    <button onclick="checkWin()">Is Closed</button>
+    <br><br>
+    <div id="demo"></div>
+</body>
+-->
+
+
+<!-- popup -->
+<!-- 
+    <button onclick="openRequestedPopup()">Open</button>
+    <script>
+        let windowObjectReference;
+        let windowFeatures = "popup,left=100,top=100,width=320,height=320";
+        function openRequestedPopup() {
+            windowObjectReference = window.open("http://www.mozilla.org/", "mozillaWindow", windowFeatures);
+        }
+    </script> 
+-->
+
+<!-- blue() -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>  
+    function myFunction() {
+        var myWindow = window.open("My New Window", "", "width=200, height=100");
+        myWindow.document.write("<p>My New Window!</p>");
+        myWindow.blur();
+    }
+</script> 
+-->
+
+<!-- setInterval() and clearInterval() -->
+
+<!-- Example-1 -->
+<!--
+<p id="demo"></p>
+<button onclick="myStopFunction()">Stop time</button>
+<script>    
+    var myVar = setInterval(myTimer, 1000);
+    function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("demo").innerHTML = t;
+    }
+
+    function myStopFunction() {
+       clearInterval(myVar);
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- 
+<style>
+    #myProgress {
+      width: 100%;
+      height: 30px;
+      position: relative;
+      background-color: #ddd;
+    }
+
+    #myBar {
+      background-color: #4CAF50;
+      width: 10px;
+      height: 30px;
+      position: absolute;
+    }
+</style>
+<div id="myProgress">
+    <div id="myBar"></div>
+</div>
+<br>
+<button onclick="move()">Click Me</button>
+<script>
+    function move() {
+      var elem = document.getElementById("myBar");
+      var width = 0;
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (width == 100) {
+          clearInterval(id);
+        } else {
+          width++;
+          elem.style.width = width + '%';
+        }
+      }
+    }
+</script> 
+-->
+
+<!-- Example-3 -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        setInterval(function () {
+            alert("Hello");
+        }, 3000);
+    }
+</script> -->
+
+<!-- setTimeout() and clearTimeout() -->
+<!-- Example-1 -->
+<!-- 
+<button onclick="myFunction()">Set Timeout</button>
+<button onclick="myStopFunction()">Stop Timeout</button>
+<script>
+    var myVar;
+    function myFunction() {
+        myVar = setTimeout(function() {
+          alert("Hello");
+        }, 3000);
+    }
+
+    function myStopFunction() {
+        clearTimeout(myVar);
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- 
+<button onclick="startCount()">Start count!</button>
+<input type="text" id="txt">
+<button onclick="stopCount()">Stop count!</button>
+<script>
+  var c = 0;
+  var t;
+  var timer_is_on = 0;
+  function timedCount() {
+    document.getElementById("txt").value = c;
+    c = c + 1;
+    t = setTimeout(timedCount, 1000);
+  }
+  function startCount() {
+    if (!timer_is_on) {
+      timer_is_on = 1;
+      timedCount();
+    }
+  }
+  function stopCount() {
+    clearTimeout(t);
+    timer_is_on = 0;
+  }
+</script>
+-->
+
+<!-- Example-3 -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        setTimeout(function () {
+            alert("Hello");
+        }, 3000);
+    }
+</script> 
+-->
+
+<!-- confirm() -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var txt;
+        var r = confirm("Press a button!");
+        if (r == true) {
+            txt = "You pressed OK!";
+        } else {
+            txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+</script> 
+-->
+
+<!-- focus() -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        var myWindow = window.open("", "", "width=200,height=100");
+        myWindow.document.write("<p>My New Window!</p>");
+        myWindow.focus();
+    }
+</script> 
+-->
+
+<!-- getComputedStyle() -->
+<!-- Example-1 -->
+<!-- 
+<p><button onclick="myFunction()">Click Me</button></p>
+<div id="test" style="height: 50px;background-color: lightblue;">Test Div</div>
+<p><span id="demo"></span></p>
+<script>
+    function myFunction() {
+        var elem = document.getElementById("test");
+        var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+        document.getElementById("demo").innerHTML = theCSSprop;
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+
+<!-- 
+<p><button onclick="myFunction()">Try it</button></p>
+<div id="test" style="height: 50px;background-color: lightblue;">Test Div</div>
+<p>The computed styles for the test div are: <br><span id="demo"></span></p>
+<script>
+    function myFunction() {
+        var elem = document.getElementById("test");
+        var txt = "";
+        cssObj = window.getComputedStyle(elem, null)
+
+        for (i = 0; i < cssObj.length; i++) {
+            cssObjProp = cssObj.item(i)
+            txt += cssObjProp + " = " + cssObj.getPropertyValue(cssObjProp) + "<br>";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+</script> 
+-->
+
+<!-- Example-3 -->
+<!-- 
+<p><button onclick="myFunction()">Click Me</button></p>
+<div id="test" style="height: 50px;background-color: lightblue;">Example-</div>
+<p>font-size of div::first-letter in the test div is: <span id="demo"></span></p>
+<script>
+    function myFunction() {
+        var elem = document.getElementById("test");
+        var theCSSprop = window.getComputedStyle(elem, "first-letter").getPropertyValue("font-size");
+        document.getElementById("demo").innerHTML = theCSSprop;
+    }
+</script> 
+-->
+
+<!-- matchMedia() -->
+<!-- Example-1 -->
+<!-- 
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = document.getElementById("demo");
+        if (window.matchMedia("(max-width: 700px)").matches) {
+            x.innerHTML = "The screen is less than, or equal to, 700 pixels wide.";
+        }
+        else {
+            x.innerHTML = "The screen is at least 700 pixels wide.";
+        }
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- 
+<body>
+    <script>
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                document.body.style.backgroundColor = "yellow";
+            } else {
+                document.body.style.backgroundColor = "pink";
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+    </script>
+</body> 
+-->
+
+<!-- moveby() -->
+<!-- 
+<button onclick="openWin()">Open Window</button>
+<button onclick="moveWin()">Move Window</button>
+<script>
+    var myWindow;
+    function openWin() {
+        myWindow = window.open("", "myWindow", "width=200, height=100");
+        myWindow.document.write("<p>This is 'myWindow'</p>");
+    }
+    function moveWin() {
+        myWindow.moveBy(250, 250);
+        myWindow.focus();
+    }
+</script> 
+-->
+
+<!-- print() -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script> 
+-->
+
+<!-- prompt() -->
+<!-- Example-1 -->
+<!-- 
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var person = prompt("Please your name ? ", "Raj Rai");
+        if (person != null) {
+            document.getElementById("demo").innerHTML = "Welcome " + person;
+        }
+        else{
+            document.getElementById("demo").innerHTML = "";
+        }
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- 
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var text;
+        var num1 = prompt("Enter Week-Day (1-7) ", "1");
+        num1 = Number(num1);
+        switch (num1) {
+            case 1:
+                text = "SUN";
+                break;
+            case 2:
+                text = "MON";
+                break;
+            case 3:
+                text = "TUE";
+                break;
+            case 4:
+                text = "WED";
+                break;
+            case 5:
+                text = "THU";
+                break;
+            case 6:
+                text = "FRI";
+                break;
+            case 7:
+                text = "SAT";
+                break;
+            default:
+                text = "Others";
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+</script> 
+-->
+
+<!-- resizeBy() -->
+<!-- 
+<button onclick="openWin()">Open Window</button>
+<button onclick="resizeWin()">ResizeBy Window</button>
+<script>
+    var myWindow;
+    function openWin() {
+        myWindow = window.open("", "", "width=100, height=100");
+    }
+    function resizeWin() {
+        myWindow.resizeBy(250, 250);
+        myWindow.focus();
+    }
+</script> 
+-->
+
+<!-- resizeTo() -->
+<!-- 
+<button onclick="openWin()">Open Window</button>
+<button onclick="resizeWin()">ResizeTo Window</button>
+<script>
+    var myWindow;
+    function openWin() {
+        myWindow = window.open("", "", "width=100, height=100");
+    }
+
+    function resizeWin() {
+        myWindow.resizeTo(250, 250);
+        myWindow.focus();
+    }
+</script>
+-->
+
+<!-- scrollBy() -->
+<!-- 
+<style>
+    body {
+        width: 5000px;
+    }
+
+    button {
+        position: fixed;
+    }
+</style>
+<button onclick="scrollWin()">Click Me</button>
+<script>
+    function scrollWin() {
+        window.scrollBy(100, 0);
+    }
+</script>
+-->
+
+<!-- scrollTo() -->
+<!-- 
+<style>
+    body {
+        width: 5000px;
+    }
+</style>
+</head>
+<body>    
+    <button onclick="scrollWin()">Click Me</button>
+    <script>
+        function scrollWin() {
+            window.scrollTo(500, 0);
+        }
+    </script>
+</body> 
+-->
+
+<!-- history -->
+<!-- history.length -->
+<!-- 
+<p id="demo"></p>
+<script>
+    var x = history.length;
+    document.getElementById("demo").innerHTML = x;
+</script>
+-->
+
+<!-- history.back -->
+<!-- 
+<button onclick="goBack()">Go Back</button>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script> 
+-->
+
+<!-- history.forward -->
+<!-- 
+<button onclick="goForward()">Go Forward</button>
+<script>
+    function goForward() {
+        window.history.forward();
+    }
+</script> 
+-->
+
+<!-- history.go -->
+<!-- 
+<button onclick="goBack()">Go</button>
+<script>
+    function goBack() {
+        window.history.go(-2);
+    }
+</script>
+-->
+
+<!-- interWidth, interHeight, outerWidth, outerHeight -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var w2 = window.outerWidth;
+        var h2 = window.outerHeight;
+        document.getElementById("demo").innerHTML = "Inter Width: " + w + "<br>Inter Height: " + h+"<br>Outer Width: " + w2 + "<br>Outer Height: " + h2;
+    }
+</script> 
+-->
+
+<!-- localStorage -->
+
+<!-- Example-1 -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<div id="demo"></div>
+<script>
+    function myFunction() {
+        // Check browser support
+        if (typeof (Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("name", "admin");
+            // Retrieve
+            document.getElementById("demo").innerHTML = localStorage.getItem("name");
+        } else {
+            document.getElementById("demo").innerHTML = "Browser does not support Web Storage";
+        }
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- 
+<script>
+    function clickCounter() {
+        if (typeof (Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+</script>
+<body>
+    <p><button onclick="clickCounter()" type="button">Click Me</button></p>
+    <div id="result"></div>    
+</body> 
+-->
+
+<!-- location -->
+
+<!-- location.assign -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        location.assign("https://www.facebook.com");
+    }
+</script> 
+-->
+
+<!-- location.hash -->
+<!-- 
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        location.hash = "part5";
+        var x = "The anchor part is now: " + location.hash;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- location.hostname -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = location.hostname;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- location.href -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = location.href;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- location.pathname -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = location.pathname;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- location.protocol -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = location.protocol;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- location.reload -->
+<!-- 
+<button onclick="myFunction()">Reload page</button>
+<script>
+    function myFunction() {
+        location.reload();
+    }
+</script> 
+-->
+
+<!-- location.replace -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<script>
+    function myFunction() {
+        location.replace("https://www.facebook.com")
+    }
+</script> 
+-->
+
+
+<!-- location.search -->
+<!-- window.html?id=1 -->
+
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>   
+    function myFunction() {
+        var x = location.search;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- window.name -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        window.name = "myWindowName";
+        var x = "This window's name is now: " + window.name;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- navigator.geolocation -->
+<!-- 
+<button onclick="getLocation()">Click Me</button>
+<p id="demo"></p>
+<script>
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+</script> 
+-->
+
+<!-- navigator.product -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = "Browser's Engine Name: " + navigator.product;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- navigator.userAgent -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = "User-agent header sent: " + navigator.userAgent;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script> 
+-->
+
+<!-- 
+<h3>Info about browser</h3>
+<div id="demo"></div>
+<script>
+    var txt = "";
+    txt += "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+    txt += "<p>Browser Name: " + navigator.appName + "</p>";
+    txt += "<p>Browser Version: " + navigator.appVersion + "</p>";
+    txt += "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+    txt += "<p>Browser Language: " + navigator.language + "</p>";
+    txt += "<p>Browser Online: " + navigator.onLine + "</p>";
+    txt += "<p>Platform: " + navigator.platform + "</p>";
+    txt += "<p>User-agent header: " + navigator.userAgent + "</p>";
+    document.getElementById("demo").innerHTML = txt;
+</script>
+-->
+
+<!-- sessionStorage -->
+<!-- Example-1 -->
+<!-- 
+<button onclick="myFunction()">Click Me</button>
+<div id="result"></div>
+<script>
+    function myFunction(){
+        if (typeof (Storage) !== "undefined") {
+            sessionStorage.setItem("user", "admin");
+            document.getElementById("result").innerHTML = sessionStorage.getItem("user");
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    }
+</script> 
+-->
+
+<!-- Example-2 -->
+<!-- 
+<script>
+    function clickCounter() {
+        if (typeof (Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+                sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+            } else {
+                sessionStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+    function openWindow(){
+        myWindow = window.open("sessionStorage2.html");
+    }
+</script>
+<p><button onclick="clickCounter()" type="button">Click Me</button></p>
+<p><button onclick="openWindow()" type="button">Click Me2</button></p>
+<div id="result"></div> 
+-->
+
