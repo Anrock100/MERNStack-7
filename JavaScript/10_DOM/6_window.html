@@ -1,12 +1,12 @@
 <!-- alert() -->
-<!-- 
-<button onclick="myFunction()">Click Me</button>
+
+<!-- <button onclick="myFunction()">Click Me</button>
 <script>
     function myFunction() {
-        alert("Hello! I am an alert box!");
+        window.alert("Hello! I am an alert box!");
     }
-</script> 
--->
+</script>  -->
+
 
 <!-- btoa() and atob() -->
 <!-- 
@@ -22,8 +22,7 @@
         res = res + "Decoded String: " + dec;
         document.getElementById("demo").innerHTML = res;
     }
-</script> 
--->
+</script> -->
 
 <!-- 
     Window.open()
@@ -41,13 +40,13 @@
 <script>
     var myWindow;
     function openWindow() {
-        myWindow = window.open("https://www.facebook.com", "_blank", "width=500, height=500");
+        myWindow = window.open("5_2_sessionStorage2.html", "_blank", "width=500, height=500");
+        //myWindow = window.open("https://www.facebook.com", "_blank", "width=500, height=500");
     }
     function closeWindow() {
         myWindow.close();
     }
-</script> 
--->
+</script> -->
 
 <!-- Example-2 -->
 <!-- <script>
@@ -74,7 +73,6 @@
     }
 
 </script>
-
 <body>
     <button onclick="openWin()">Open</button>
     <button onclick="closeWin()">Close</button>
@@ -82,8 +80,7 @@
     <button onclick="checkWin()">Is Closed</button>
     <br><br>
     <div id="demo"></div>
-</body>
--->
+</body> -->
 
 
 <!-- popup -->
@@ -95,8 +92,7 @@
         function openRequestedPopup() {
             windowObjectReference = window.open("http://www.mozilla.org/", "mozillaWindow", windowFeatures);
         }
-    </script> 
--->
+    </script>  -->
 
 <!-- blue() -->
 <!-- 
@@ -107,13 +103,11 @@
         myWindow.document.write("<p>My New Window!</p>");
         myWindow.blur();
     }
-</script> 
--->
+</script>  -->
 
 <!-- setInterval() and clearInterval() -->
-
 <!-- Example-1 -->
-<!--
+<!-- 
 <p id="demo"></p>
 <button onclick="myStopFunction()">Stop time</button>
 <script>    
@@ -127,11 +121,11 @@
     function myStopFunction() {
        clearInterval(myVar);
     }
-</script> 
--->
+</script>  -->
+
 
 <!-- Example-2 -->
-<!-- 
+ 
 <style>
     #myProgress {
       width: 100%;
@@ -139,7 +133,6 @@
       position: relative;
       background-color: #ddd;
     }
-
     #myBar {
       background-color: #4CAF50;
       width: 10px;
@@ -167,7 +160,7 @@
       }
     }
 </script> 
--->
+
 
 <!-- Example-3 -->
 <!-- 
@@ -344,7 +337,7 @@
             if (x.matches) { // If media query matches
                 document.body.style.backgroundColor = "yellow";
             } else {
-                document.body.style.backgroundColor = "pink";
+                document.body.style.backgroundColor = "black";
             }
         }
 
