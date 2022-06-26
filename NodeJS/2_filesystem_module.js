@@ -82,6 +82,10 @@ while (filesLeft) {
 */
 
 // Creating a new directory
+
+// console.log(__dirname);
+// console.log(__filename);
+// console.log(process.argv);
 /*
 var path = "./Folder-1";
 fs.access(path, (error) => {
@@ -114,7 +118,6 @@ fs.rmdir(path, (error) => {
 */
 
 // Creating new directory with sub directories
-/*
 const path = "./Folder-1/Folder-2/Folder-3";
 fs.access(path, (error) => {  
   if (error) {
@@ -129,7 +132,7 @@ fs.access(path, (error) => {
     console.log("Given directory already exists");
   }
 });
-*/
+
 
 // Remove directory with sub directories - HW
 
