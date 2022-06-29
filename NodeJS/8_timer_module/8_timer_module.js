@@ -24,7 +24,7 @@ function intervalFunc() {
     objDT = new Date();
     console.log(`${objDT}`);
 }
-setInterval(intervalFunc, 1000);
+setInterval(intervalFunc, 1*1000);
 */
 
 // Example-4
