@@ -1,5 +1,5 @@
 //Example-1 [Problem Statement]
-/*
+
 const records = [
 	{id:1, name:'Raj',address:'KTM'},
 	{id:2, name:'Keshor',address:'Bhk'},
@@ -23,7 +23,7 @@ function createData(newRow){
 }
 createData({id:4, name:'Raju',address:'Lat'});
 displayData();
-*/
+
 
 // Example-1 - Callback function
 /*

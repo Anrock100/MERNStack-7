@@ -41,36 +41,23 @@ function f1(num1, num2, myfunction) {
 f1(6,7, showMessage);
 */
 
-// Example-1
-// var fs = require("fs");
+//
+// Example-4
+var fs = require("fs");
+
 // Synchronous
-// console.log("after reading data....");
-// const data = fs.readFileSync("data1.txt", "utf-8");
+/*
+console.log("before reading data....");
+const data = fs.readFileSync("data1.txt", "utf-8");
 // console.log(data);
-// console.log("after reading data....");
+console.log("after reading data....");
+*/
 
 // Asynchronous
-// console.log("start reading data....");
-// const data = fs.readFile("data1.txt", "utf-8", (error, data)=>{
-//     console.log(data);
-// });
-// console.log("after reading data....");
-
-// Example-2
 /*
-async function myFunction() {
-    return "Hello";
-}
-
-function myFunction() {
-    return Promise.resolve("Hello");
-}
-async function myFunction() {
-    return "Hello";
-  }
-
-myFunction().then(
-    function(value) {myDisplayer(value);},
-    function(error) {myDisplayer(error);}
-);
+console.log("before reading data....");
+fs.readFile("data1.txt", "utf-8", (error, data)=>{
+    console.log(data);
+});
+console.log("after reading data....");
 */

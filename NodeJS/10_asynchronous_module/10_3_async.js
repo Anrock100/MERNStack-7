@@ -19,22 +19,21 @@ console.log("end .....");
 let num1 = 5;
 let num2 = 0;
 setTimeout(()=>{
-    b=9;
-}, 1*1000);
+    num2=9;
+}, 3*1000);
 console.log(num1+num2);
 */
 
 // Example-4
-/*
+
 let a=20;
 let b=0;
-let waitingData= new Promise((resolve,reject)=>{
+let result = new Promise((resolve,reject)=>{
    setTimeout(()=>{
       resolve(30);
-   },2000)
+   },2*1000)
 })
-waitingData.then((data)=>{
+result.then((data)=>{
    b=data;
    console.log(a+b)
 })
-*/
