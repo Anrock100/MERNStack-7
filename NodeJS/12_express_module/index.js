@@ -140,7 +140,7 @@ app.listen(80);
 //Example-5 - Returning XMl data
 // npm i xml-parse-from-string
 //https://www.npmjs.com/package/xml-parse-from-string
-
+/*
 var express = require("express");
 var app = express();
 app.get('', (request, response)=>{
@@ -154,3 +154,75 @@ app.get('', (request, response)=>{
     response.send(strXML);
 });
 app.listen(80);
+*/
+
+// Example-6 Render HTML File -1 (display with file extension)
+var express = require("express");
+var path = require("path");
+var filePath = path.join(__dirname, "example-7");
+var app = express();
+app.get('', (request, response)=>{
+    response.send(``);
+});
+app.use(express.static(filePath));
+app.listen(8000);
+
+// Example-7 Render HTML File -2 (Remove file extension)
+/*
+var express = require("express");
+var path = require("path");
+var filePath = path.join(__dirname, "example-6");
+var app = express();
+app.get('', (request, response)=>{
+    response.sendFile(`${filePath}/index.html`);
+});
+app.get('/about', (request, response)=>{
+    response.sendFile(`${filePath}/about.html`);
+});
+app.get('/contact', (request, response)=>{
+    response.sendFile(`${filePath}/contact.html`);
+});
+app.get('*', (request, response)=>{
+    response.sendFile(`${filePath}/pagenotfound.html`);
+});
+app.listen(8000);
+*/
+
+
+//Example-8 Render Template File -1
+// npm install ejs
+// https://ejs.co/
+/*
+var express = require("express");
+var path = require("path");
+var app = express();
+app.set('view engine', 'ejs');
+app.get('', (request, response)=>{
+    //index.ejs -> read and display from views folder
+    //we can send value(s) to index.ejs file from current app
+    objPerson = {
+        id:1,
+        name:'Broadway',
+        address:'Kathmandu'
+    };
+    objPersons = [
+        {id:1, name:'Broadway', address:'Kathmandu'},
+        {id:2, name:'Infosys', address:'Lalitpur'},
+        {id:3, name:'Nepal', address:'Bhaktapur'},
+    ]
+    //records read from text file/xml file/database -> redirect to views
+    response.render('index', {objPerson}); 
+});
+app.listen(8000);
+*/
+
+
+
+
+
+
+
+
+
+
+
