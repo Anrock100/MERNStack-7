@@ -1,0 +1,9 @@
+<h1>All Persons</h1>
+<p>ADD NEW</p>
+<table border="1" width="95%">
+    <thead><td>ID</td><td>NAME</td><td>ADDRESS</td><td>CONTROL</td></thead>
+    <% objPersons.forEach((person)=>{ %>
+        <tr><td><%= person.id %></td><td><%= person.name %>
+            </td><td><%= person.address %></td><td>EDIT | DELETE </td></tr>
+    <% }); %>
+</table>

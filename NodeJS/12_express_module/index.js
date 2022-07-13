@@ -167,6 +167,8 @@ app.get('', (request, response)=>{
 app.use(express.static(filePath));
 app.listen(8000);
 
+//127.0.0.1/index.html
+
 // Example-7 Render HTML File -2 (Remove file extension)
 /*
 var express = require("express");
@@ -215,14 +217,3 @@ app.get('', (request, response)=>{
 });
 app.listen(8000);
 */
-
-
-
-
-
-
-
-
-
-
-
