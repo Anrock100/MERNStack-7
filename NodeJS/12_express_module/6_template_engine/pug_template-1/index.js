@@ -9,4 +9,5 @@ import web from './routes/web.js';
 app.set('views', './views');
 app.set('view engine', 'pug');
 app.use('/', web);
+
 app.listen(port);

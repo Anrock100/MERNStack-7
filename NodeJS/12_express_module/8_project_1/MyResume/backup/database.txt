@@ -1,0 +1,15 @@
+server: localhost
+port: 3306
+user: root
+password: ''
+dbname : mern7
+table: queries
+fields:
+	id int(11) not null primary key
+	name varchar(50) not null
+	email varchar(50) not null
+	subject varchar(250) not null
+	message varchar(1024) not null
+
+	
+
