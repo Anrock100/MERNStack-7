@@ -3,10 +3,14 @@ const app = express();
 const port = process.env.PORT || '8000';
 import web from './routes/web.js';
 import {join} from 'path';
-
-app.use(express.static(join(process.cwd(), 'public')));
+import bodyParser from 'body-parser';
 
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static(join(process.cwd(), 'public')));
+
 app.use('/', web);
 
 app.listen(port, ()=>{

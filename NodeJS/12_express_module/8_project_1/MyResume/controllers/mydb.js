@@ -25,11 +25,13 @@ conn.end(function(err) {
 });
 */
 
-//let values = [1, 'Raj Rai', 'raj@gmail.com', 'test1', 'message1'];
+//let values = ['Raj Rai', 'raj@gmail.com', 'test1', 'message1'];
 
 var insertQuery=function (values){
-  let sql = `INSERT INTO queries(id, name, email, subject, message ) VALUES(?)`;
-  //let values = [1, 'Raj Rai', 'raj@gmail.com', 'test1', 'message1'];
+  var res = false;
+  console.log(values);
+  let sql = `INSERT INTO queries(name, email, subject, message ) VALUES(?)`;
+  //let values = ['Raj Rai', 'raj@gmail.com', 'test1', 'message1'];
   var conn = mysql.createConnection({ host: "localhost", user: "root", password: "", database: "mern7" });
   conn.connect(function (err) {
     if (err) throw err;
@@ -37,11 +39,14 @@ var insertQuery=function (values){
       if (!err) {
         //console.log(result.affectedRows);
         console.log("Insert record successfully");
+        res=true;
       }
       else {
+        res=false;
         throw err;
       }
     });
   });
+  return res;
 }
 export {insertQuery};
