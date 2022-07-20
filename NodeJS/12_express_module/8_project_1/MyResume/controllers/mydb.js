@@ -29,7 +29,6 @@ conn.end(function(err) {
 
 var insertQuery=function (values){
   var res = false;
-  console.log(values);
   let sql = `INSERT INTO queries(name, email, subject, message ) VALUES(?)`;
   //let values = ['Raj Rai', 'raj@gmail.com', 'test1', 'message1'];
   var conn = mysql.createConnection({ host: "localhost", user: "root", password: "", database: "mern7" });
