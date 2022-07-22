@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost:27017/mydb')
     .then(() => console.log('Connected to MongoDB server successfully!'))
     .catch(err => console.error('Error to connect with database server', err));
 
-// Creating Schema    
+// Creating Schema
 const personSchema = new mongoose.Schema({
     name: { type: String, required: true, trim: true },
     address: { type: String, required: true, trim: true },
@@ -68,6 +68,8 @@ async function deleteDocument(id) {
     console.log(result);
 }
 
+deleteDocument("xnxnxnxxxxxxxxxx");
+git 
 // Test
 /*
 saveDocument();
