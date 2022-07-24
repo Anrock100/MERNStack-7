@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost:27017/mydb', {
     console.log("Error to connect database"+ex);
 });
 
-// Creating Schema
+// Creating Schema    
 const personSchema = new mongoose.Schema({
     id: { type: Number, required: true, trim: true, unique: true },
     name: { type: String, required: true, trim: true },
@@ -17,5 +17,5 @@ const personSchema = new mongoose.Schema({
 });
 
 // Creating Model
-const PersonModel = new mongoose.model("Person", personSchema);//Persons-> Collection
+const PersonModel = new mongoose.model("Person", personSchema);
 export {PersonModel};

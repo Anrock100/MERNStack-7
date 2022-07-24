@@ -4,13 +4,13 @@ import {PersonModel} from '../databases/mongoose_client.js';
 const homeController = async (request, response) => {
     var persons = await PersonModel.find();
     // console.log(persons);
-    console.log("all persons");
+    // console.log("all persons");
     // for(var i = 0; i<persons.length; i++){
     //     console.log(persons[i]);
     // }
-    persons.forEach((element, index, array) => { 
-        console.log(element.name);
-    })
+    // persons.forEach((element, index, array) => { 
+    //     console.log(element.name);
+    // })
     // response.render(join(process.cwd(), 'views', 'index', {allperson:persons}));
     response.render('index', {persons:persons});
 }
