@@ -14,3 +14,7 @@ let full_file_name = "./" + req_name + ".xml";
 fs.writeFileSync(full_file_name, xml, function(err) {
     if (err) throw err;
 });
+
+//create xml file (tag and value)
+//read xml file (tag and value)
+//update xml file (tag and value)
