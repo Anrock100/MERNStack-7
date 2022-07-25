@@ -6,11 +6,11 @@ const homeController = async (request, response) => {
 }
 
 const createController = (request, response) => {
-    response.cookie('tmpUser', 'Raj Rai'); //name:value
+    response.cookie('tmpUser', 'Raj Rai'); //name:value create new cookie
     response.send('cookie create successfully');
 }
 
-const displayController = async (request, response) => {
+const displayController = (request, response) => {
     response.send(request.cookies);//return cookies //blank object {}
 }
 
