@@ -1,7 +1,7 @@
 // npm install ejs
 // npm install serve-favicon
 // npm install body-parser
-// npm install express-session
+// npm install express-session //session
 
 import express from 'express';
 const app = express();

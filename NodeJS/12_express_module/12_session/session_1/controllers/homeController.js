@@ -29,7 +29,7 @@ const displayAllController = (request, response) => {
     var str1 = '';
     for (let key in sessions) {
         if (key !== 'cookie') {
-            let value = sessions[key];            
+            // let value = sessions[key];            
             str1+=sessions[key]+"<br/>";
         }
     }
@@ -37,7 +37,7 @@ const displayAllController = (request, response) => {
     response.render('display', {result:str1});
 }
 const destroyController = (request, response) => {
-    request.session.destroy(null);
+    request.session.destroy();
     response.render('display', {result:"Remove all sessions"});
 }
 export { homeController, createController1, createController2, displayController1, displayController2, destroyController, displayAllController }
