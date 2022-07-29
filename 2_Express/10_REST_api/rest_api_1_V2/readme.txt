@@ -1,5 +1,6 @@
 URLs
 127.0.0.1:8000/persons/
+Person => id, name, address
 
 Methods
 get - get all
@@ -33,3 +34,16 @@ http://127.0.0.1:8000/persons/3
 Test - Testing Tool (Postman)
 
 Implements - Language (Python, Java, C#, ASP, JSP, PHP, JS)
+
+URLS
+GET /                   home page 
+GET /persons/           all persons   
+GET /persons/:pid       individual person
+POST /persons/          new person
+PUT /persons/:pid       edit person based on id
+PATCH /persons/:pid     edit person partially based on id
+DELETE /persons/:pid    delete person based on id
+
+person
+pid, name, address
+

@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || '8000';
 import web from './routes/routers.js';
 import {join } from 'path';
+import bodyParser from 'body-parser';
 
 const options = {
     dotfiles:"deny",
@@ -28,6 +29,13 @@ app.use('/css', express.static(join(process.cwd(), 'public/css')));
 app.use('/js', express.static(join(process.cwd(), 'public/js')));
 app.use('/images', express.static(join(process.cwd(), 'public/images')));
 */
+
+// Post Method
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.use('/', web);
 // app.use('/api/', web);
