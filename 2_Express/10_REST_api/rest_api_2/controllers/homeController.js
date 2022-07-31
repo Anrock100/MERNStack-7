@@ -8,15 +8,16 @@ var persons = [
     { id: 105, name: "Reeta Bhatta", address: 'Ktm' }
 ];
 
-const homeController = (request, response) => {
+const defaultController = (request, response) => {
     // response.render(join(process.cwd(), 'views', 'index'));
-    // response.status(200).send("All Persons");
+    response.status(200).send("Welcome to REST-API_V2");    
+}
+
+const homeController = (request, response) => {
     response.json(persons);
 }
 
 const singleController = (request, response) => {
-    // response.render(join(process.cwd(), 'views', 'index'));
-    // response.status(200).send("Individual Person");
     var person = persons.filter(function (person) {
         if (person.id == request.params.id) {
             return true;
@@ -30,9 +31,7 @@ const singleController = (request, response) => {
     }
 }
 
-const newController = (request, response) => {
-    // response.render(join(process.cwd(), 'views', 'index'));
-    // response.status(200).send("Add new person");    
+const newController = (request, response) => { 
     console.log(request.body);
     var newId = persons[persons.length - 1].id + 1;
     persons.push({ id: newId, name: request.body.name, address: request.body.address, weight: request.body.weight });
@@ -40,13 +39,10 @@ const newController = (request, response) => {
 }
 
 const putController = (request, response) => {
-    // response.render(join(process.cwd(), 'views', 'index'));
-    // response.status(200).send("Update person");
     var updateIndex = persons.map(function (person) {
         return person.id;
     }).indexOf(parseInt(request.params.id));
     if (updateIndex === -1) {
-        //Movie not found, create new
         persons.push({
             id: request.params.id,
             name: request.body.name,
@@ -54,7 +50,6 @@ const putController = (request, response) => {
         });
         response.json({ message: "New Person Created." });
     } else {
-        //Update existing movie
         persons[updateIndex] = {
             id: request.params.id,
             name: request.body.name,
@@ -65,9 +60,6 @@ const putController = (request, response) => {
 }
 
 const delController = (request, response) => {
-    // response.render(join(process.cwd(), 'views', 'index'));
-    // response.status(200).send("Delete person");
-    // console.log(request.params.id);
     console.log(request.params.id);
     var removeIndex = persons.map(function (person) {
         return person.id;
