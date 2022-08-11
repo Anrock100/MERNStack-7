@@ -1,8 +1,8 @@
-// import React from 'react';
+import React from 'react';
 // Example-1
-/*
+
 ReactDom.render(<h1>JSX is an extension of the JavaScript-1</h1>, document.getElementById("root"));
-*/
+
 
 // Example-2
 /*
