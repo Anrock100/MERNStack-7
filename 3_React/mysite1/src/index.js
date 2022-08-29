@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import WebForms from "./WebForms/WebForms";
 
-
-// FOR EXECUTE / RUN:
 const rootElement = document.getElementById("root");
-ReactDOM.render(<div>Hello</div>, rootElement);
+ReactDOM.render(<WebForms/>, rootElement);
