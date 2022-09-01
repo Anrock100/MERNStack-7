@@ -6,6 +6,8 @@ function Form4() {
     const handleSubmit = (event)=>{
         event.preventDefault();
         console.log(txtID);
+        //connect with database, and insert record
+        
         //send to file, dbms, api
         //receive from file, dbms, api
     }
