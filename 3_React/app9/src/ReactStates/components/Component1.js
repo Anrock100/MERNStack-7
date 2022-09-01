@@ -8,7 +8,7 @@ class Component1 extends React.Component {
     //how to update the value of state?
     f1(){
         console.log("hello from f1()");
-        this.setState({msg:"Hello from f1()"})
+        this.setState({msg:"Hello from f1()"}) //assign object to state varaible
     }
     f2(){
         console.log("hello from f2()");
