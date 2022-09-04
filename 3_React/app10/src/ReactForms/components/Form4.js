@@ -24,6 +24,7 @@ function Form4() {
         console.log("QUALIFICATION : " + qualification);
         console.log("COMMENTS : " + txtComment);
         console.log("PHOTO FILE : " + selectedFile.name);
+        //call restapi and post data to insert
     }
 
     return (
@@ -86,12 +87,13 @@ function Form4() {
                 </p>
                 <p>COMMENTS : <textarea rows='5' cols='20' value={txtComment} onChange={(e) => setComment(e.target.value)} /></p>
                 <p>PHOTO : <input type='file' onChange={(e) => setSelectedFile(e.target.files[0])} /></p>
+                <input type="hidden" name="txtHidden" value="23232323" />
                 <p>
                     <input type="submit" name="submit" value="Submit" />
                     <input type="reset" name="reset" value="Reset" />
                     <input type="button" name="ok" value="OK" />
                 </p>
-                <input type="hidden" name="txtHidden" value="23232323" />
+                
             </form>
         </div>
     );
