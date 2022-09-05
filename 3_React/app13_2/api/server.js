@@ -1,6 +1,6 @@
-const express = require("express"); //server
-const multer = require('multer') //file upload
-const mongoose = require("mongoose"); //mangodb middleware
+const express = require("express");
+const multer = require('multer')
+const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8000;
 const server = express();
@@ -15,7 +15,7 @@ const fileStorageEngine = multer.diskStorage({
     filename: (req, file, cb) => {
         // cb(null, Date.now() + "--" + file.originalname);
         const newFileName = Date.now() + "--" + file.originalname;
-        cb(null, newFileName); //upload file
+        cb(null, newFileName);
         // console.log(file.originalname, "=>", newFileName);
     },
 });
@@ -49,7 +49,7 @@ server.get("/", (req, res) => {
 // 3.2 Insert
 //name, address, photo (file)
 server.post("/v1/persons/", upload.single('photo'), (req, res) => {
-    const data = { name: req.body.name, address: req.body.address, photo: req.file.filename }; //filename -> fileStorageEngine
+    const data = { name: req.body.name, address: req.body.address, photo: req.file.filename };
     const Person = new PersonModel(data);
     Person.save((err, Person) => {
         if (err) {
