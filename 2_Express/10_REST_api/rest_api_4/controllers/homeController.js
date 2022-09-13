@@ -14,7 +14,7 @@ const homeController = async (request, response)=>{
 
 const singleController = async (request, response)=>{
     const {id} = request.params;
-    const person = await Person.findById(id);
+    const person = await Person.findById(id); //_id
     if(!person){
         response.status(400).send({'status':false});
     }
@@ -50,6 +50,11 @@ const putController = async (request, response)=>{
         response.status(500).send({status:false});
     });     
 }
+
+// patch
+/*
+await Person.findByIdAndUpdate(id,{request.body})
+*/
 
 const delController = async (request, response)=>{
     var {id} = request.params;
